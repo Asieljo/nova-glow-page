@@ -5,16 +5,26 @@ interface IntersectionObserverOptions {
   threshold?: number;
   rootMargin?: string;
   once?: boolean;
+  initiallyVisible?: boolean; // New option to make elements visible right away
 }
 
 export function useIntersectionObserver(
   ref: RefObject<Element>,
   options: IntersectionObserverOptions = {}
 ): boolean {
-  const [isIntersecting, setIsIntersecting] = useState(false);
-  const { threshold = 0.1, rootMargin = '0px', once = true } = options;
+  const [isIntersecting, setIsIntersecting] = useState(!!options.initiallyVisible);
+  const { threshold = 0.1, rootMargin = '0px', once = true, initiallyVisible = false } = options;
 
   useEffect(() => {
+    // Check if we're on mobile
+    const isMobile = window.innerWidth < 768;
+    
+    // If on mobile and initiallyVisible is true, simply set as visible
+    if (isMobile && initiallyVisible) {
+      setIsIntersecting(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsIntersecting(entry.isIntersecting);
@@ -39,7 +49,7 @@ export function useIntersectionObserver(
         observer.unobserve(element);
       }
     };
-  }, [ref, threshold, rootMargin, once]);
+  }, [ref, threshold, rootMargin, once, initiallyVisible]);
 
   return isIntersecting;
 }

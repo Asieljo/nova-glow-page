@@ -8,6 +8,11 @@ import Footer from '../components/Footer';
 
 const Index = () => {
   useEffect(() => {
+    // Ensure all elements are visible immediately on page load
+    document.querySelectorAll('.animate-fade-in').forEach(el => {
+      (el as HTMLElement).style.opacity = '1';
+    });
+    
     // Smooth scroll to sections when clicking on navigation links
     const handleNavigation = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -40,7 +45,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      <main className="flex-1">
+      <main className="flex-1 pt-16 md:pt-0"> {/* Added padding-top to prevent content from being hidden under fixed navbar on mobile */}
         <Hero />
         <Features />
         <AppSection />

@@ -31,7 +31,7 @@ const Navbar = () => {
     <header 
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out py-4 px-6 md:px-12',
-        isScrolled ? 'bg-white/80 backdrop-blur-lg shadow-sm' : 'bg-transparent'
+        isScrolled ? 'bg-white/90 backdrop-blur-lg shadow-sm' : 'bg-white/80 backdrop-blur-sm'
       )}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -73,16 +73,16 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div 
         className={cn(
-          'fixed inset-0 bg-white/95 backdrop-blur-lg z-40 pt-20 px-6 md:hidden transition-all duration-300 ease-in-out',
+          'fixed inset-0 top-[72px] bg-white z-40 pt-4 px-6 md:hidden transition-all duration-300 ease-in-out',
           isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         )}
       >
-        <nav className="flex flex-col space-y-6 items-center">
+        <nav className="flex flex-col space-y-4 items-center">
           {navLinks.map((link) => (
             <a 
               key={link.href} 
               href={link.href}
-              className="text-lg font-medium text-nova-darkGray hover:text-nova-blue transition-colors"
+              className="text-lg font-medium text-nova-darkGray hover:text-nova-blue transition-colors p-3 w-full text-center bg-nova-gray/50 rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}
@@ -92,7 +92,7 @@ const Navbar = () => {
             href="https://novagps.mx/plataforma" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="button-highlight bg-nova-blue text-white px-6 py-3 rounded-full text-lg font-medium w-full text-center shadow-button"
+            className="button-highlight bg-nova-blue text-white px-6 py-3 rounded-full text-lg font-medium w-full text-center shadow-button mt-4"
             onClick={() => setIsMenuOpen(false)}
           >
             Plataforma
