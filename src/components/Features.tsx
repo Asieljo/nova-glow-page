@@ -21,7 +21,7 @@ const FeatureCard = ({ icon, title, description, isVisible, delay }: FeatureCard
     )}
     style={{ transitionDelay: `${delay}ms` }}
   >
-    <div className="p-3 bg-nova-blue/10 rounded-full w-12 h-12 flex items-center justify-center text-nova-blue mb-4">
+    <div className="p-3 bg-nova-orange/10 rounded-full w-12 h-12 flex items-center justify-center text-nova-orange mb-4">
       {icon}
     </div>
     <h3 className="text-xl font-semibold mb-3">{title}</h3>
@@ -31,10 +31,10 @@ const FeatureCard = ({ icon, title, description, isVisible, delay }: FeatureCard
 
 const Features = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isSectionVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
+  const isSectionVisible = useIntersectionObserver(sectionRef, { threshold: 0.1, initiallyVisible: true });
   
   const imageRef = useRef<HTMLDivElement>(null);
-  const isImageVisible = useIntersectionObserver(imageRef, { threshold: 0.1 });
+  const isImageVisible = useIntersectionObserver(imageRef, { threshold: 0.1, initiallyVisible: true });
 
   const features = [
     {
@@ -78,7 +78,7 @@ const Features = () => {
       <div className="max-w-7xl mx-auto">
         <div ref={sectionRef} className="text-center mb-16">
           <span className={cn(
-            "inline-block px-3 py-1 bg-nova-blue/10 text-nova-blue rounded-full text-sm font-medium mb-4 opacity-0 transition-opacity duration-500",
+            "inline-block px-3 py-1 bg-nova-orange/10 text-nova-orange rounded-full text-sm font-medium mb-4 opacity-0 transition-opacity duration-500",
             isSectionVisible && "opacity-100"
           )}>
             Características Principales
@@ -126,11 +126,11 @@ const Features = () => {
               />
               
               {/* Decorative elements */}
-              <div className="absolute -z-10 -top-5 -left-5 w-full h-full rounded-3xl border-2 border-nova-blue/30"></div>
-              <div className="absolute -z-10 -bottom-5 -right-5 w-full h-full rounded-3xl border-2 border-nova-blue/30"></div>
+              <div className="absolute -z-10 -top-5 -left-5 w-full h-full rounded-3xl border-2 border-nova-orange/30"></div>
+              <div className="absolute -z-10 -bottom-5 -right-5 w-full h-full rounded-3xl border-2 border-nova-orange/30"></div>
               
               {/* Animation pulse */}
-              <div className="absolute -z-10 inset-0 rounded-3xl bg-nova-blue/10 animate-pulse-soft"></div>
+              <div className="absolute -z-10 inset-0 rounded-3xl bg-nova-orange/10 animate-pulse-soft"></div>
             </div>
           </div>
           
@@ -158,7 +158,7 @@ const Features = () => {
             href="https://novagps.mx/plataforma" 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="button-highlight inline-flex items-center bg-nova-blue text-white px-8 py-4 rounded-full font-medium shadow-button hover:bg-nova-darkBlue transition-colors"
+            className="button-highlight inline-flex items-center bg-nova-orange text-white px-8 py-4 rounded-full font-medium shadow-button hover:bg-nova-darkOrange transition-colors"
           >
             Ver todas las características <ArrowRight className="ml-2 h-5 w-5" />
           </a>

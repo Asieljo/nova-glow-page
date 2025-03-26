@@ -26,9 +26,9 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				nova: {
-					blue: '#1C70D3',
-					lightBlue: '#4A96F7',
-					darkBlue: '#135CAA',
+					orange: '#fb8405',
+					lightOrange: '#ffa443',
+					darkOrange: '#d46c00',
 					gray: '#F5F5F7',
 					darkGray: '#333333',
 					black: '#111111',

@@ -13,7 +13,7 @@ const Footer = () => {
           <div>
             <div className="mb-6">
               <a href="#" className="flex items-center">
-                <span className="text-2xl font-bold text-white">Nova<span className="text-nova-lightBlue">GPS</span></span>
+                <span className="text-2xl font-bold text-white">Nova<span className="text-nova-lightOrange">GPS</span></span>
               </a>
             </div>
             <p className="text-white/70 mb-6">
@@ -73,25 +73,25 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-6">Contacto</h3>
             <ul className="space-y-4">
               <li className="flex">
-                <MapPin className="h-5 w-5 text-nova-lightBlue mr-3 shrink-0" />
+                <MapPin className="h-5 w-5 text-nova-lightOrange mr-3 shrink-0" />
                 <span className="text-white/70">
                   Calle Principal #123, Ciudad de México, México
                 </span>
               </li>
               <li className="flex">
-                <Phone className="h-5 w-5 text-nova-lightBlue mr-3 shrink-0" />
+                <Phone className="h-5 w-5 text-nova-lightOrange mr-3 shrink-0" />
                 <a href="tel:+525512345678" className="text-white/70 hover:text-white transition-colors">
                   +52 (55) 1234-5678
                 </a>
               </li>
               <li className="flex">
-                <Mail className="h-5 w-5 text-nova-lightBlue mr-3 shrink-0" />
+                <Mail className="h-5 w-5 text-nova-lightOrange mr-3 shrink-0" />
                 <a href="mailto:info@novagps.mx" className="text-white/70 hover:text-white transition-colors">
                   info@novagps.mx
                 </a>
               </li>
               <li className="flex">
-                <Clock className="h-5 w-5 text-nova-lightBlue mr-3 shrink-0" />
+                <Clock className="h-5 w-5 text-nova-lightOrange mr-3 shrink-0" />
                 <span className="text-white/70">
                   Lun - Vie: 9:00 - 18:00
                 </span>
@@ -109,11 +109,11 @@ const Footer = () => {
                 <input 
                   type="email" 
                   placeholder="Tu correo electrónico" 
-                  className="bg-white/10 border border-white/20 text-white rounded-l-full py-3 px-4 w-full focus:outline-none focus:border-nova-lightBlue" 
+                  className="bg-white/10 border border-white/20 text-white rounded-l-full py-3 px-4 w-full focus:outline-none focus:border-nova-lightOrange" 
                 />
                 <button 
                   type="submit" 
-                  className="bg-nova-blue hover:bg-nova-lightBlue transition-colors py-3 px-4 rounded-r-full"
+                  className="bg-nova-orange hover:bg-nova-lightOrange transition-colors py-3 px-4 rounded-r-full"
                 >
                   <ArrowRight className="h-5 w-5" />
                 </button>

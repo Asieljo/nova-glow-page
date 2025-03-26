@@ -7,10 +7,10 @@ import AnimatedImage from './ui/AnimatedImage';
 
 const AppSection = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const isSectionVisible = useIntersectionObserver(sectionRef, { threshold: 0.1 });
+  const isSectionVisible = useIntersectionObserver(sectionRef, { threshold: 0.1, initiallyVisible: true });
   
   const phoneRef = useRef<HTMLDivElement>(null);
-  const isPhoneVisible = useIntersectionObserver(phoneRef, { threshold: 0.1 });
+  const isPhoneVisible = useIntersectionObserver(phoneRef, { threshold: 0.1, initiallyVisible: true });
   
   const appFeatures = [
     "Interfaz sencilla e intuitiva",
@@ -24,18 +24,18 @@ const AppSection = () => {
   return (
     <section id="app" className="py-24 px-6 md:px-12 lg:px-16 relative overflow-hidden bg-white">
       {/* Background elements */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-nova-blue/5 rounded-l-[100px] -z-10 hidden lg:block"></div>
-      <div className="absolute bottom-20 left-20 w-[400px] h-[400px] rounded-full bg-nova-blue/5 blur-3xl -z-10"></div>
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-nova-orange/5 rounded-l-[100px] -z-10 hidden lg:block"></div>
+      <div className="absolute bottom-20 left-20 w-[400px] h-[400px] rounded-full bg-nova-orange/5 blur-3xl -z-10"></div>
       
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div ref={sectionRef}>
             <div className="flex items-center space-x-2 mb-4 opacity-0 transition-opacity duration-500" style={{ transitionDelay: '100ms' }} ref={sectionRef}>
               <div className={cn("", isSectionVisible && "opacity-100")}>
-                <Smartphone className="h-5 w-5 text-nova-blue" />
+                <Smartphone className="h-5 w-5 text-nova-orange" />
               </div>
               <span className={cn(
-                "text-sm font-medium text-nova-blue bg-nova-blue/10 px-3 py-1 rounded-full opacity-0 transition-opacity duration-500",
+                "text-sm font-medium text-nova-orange bg-nova-orange/10 px-3 py-1 rounded-full opacity-0 transition-opacity duration-500",
                 isSectionVisible && "opacity-100"
               )}>
                 Aplicación Móvil y Plataforma Web
@@ -59,13 +59,13 @@ const AppSection = () => {
             <div className="mb-10">
               <div className="flex items-center mb-4 space-x-4">
                 <div className={cn(
-                  "p-2.5 bg-nova-blue text-white rounded-full opacity-0 transition-opacity duration-500",
+                  "p-2.5 bg-nova-orange text-white rounded-full opacity-0 transition-opacity duration-500",
                   isSectionVisible && "opacity-100"
                 )} style={{ transitionDelay: '400ms' }}>
                   <Smartphone className="h-5 w-5" />
                 </div>
                 <div className={cn(
-                  "p-2.5 bg-white border border-nova-blue/30 text-nova-blue rounded-full opacity-0 transition-opacity duration-500",
+                  "p-2.5 bg-white border border-nova-orange/30 text-nova-orange rounded-full opacity-0 transition-opacity duration-500",
                   isSectionVisible && "opacity-100"
                 )} style={{ transitionDelay: '450ms' }}>
                   <Laptop className="h-5 w-5" />
@@ -82,8 +82,8 @@ const AppSection = () => {
                     )}
                     style={{ transitionDelay: `${500 + index * 100}ms` }}
                   >
-                    <div className="bg-nova-blue/10 rounded-full p-1 mt-0.5">
-                      <Check className="h-4 w-4 text-nova-blue" />
+                    <div className="bg-nova-orange/10 rounded-full p-1 mt-0.5">
+                      <Check className="h-4 w-4 text-nova-orange" />
                     </div>
                     <span className="text-nova-darkGray">{feature}</span>
                   </li>
@@ -99,13 +99,13 @@ const AppSection = () => {
                 href="https://novagps.mx/plataforma" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="button-highlight bg-nova-blue text-white px-8 py-4 rounded-full font-medium shadow-button text-center hover:bg-nova-darkBlue transition-colors"
+                className="button-highlight bg-nova-orange text-white px-8 py-4 rounded-full font-medium shadow-button text-center hover:bg-nova-darkOrange transition-colors"
               >
                 Acceder a la plataforma
               </a>
               <a 
                 href="#contact" 
-                className="px-8 py-4 rounded-full border border-nova-blue/30 text-nova-blue font-medium hover:bg-nova-blue/5 transition-colors text-center"
+                className="px-8 py-4 rounded-full border border-nova-orange/30 text-nova-orange font-medium hover:bg-nova-orange/5 transition-colors text-center"
               >
                 Solicitar demostración
               </a>
@@ -126,19 +126,19 @@ const AppSection = () => {
               
               {/* App UI elements */}
               <div className="absolute -right-16 top-20 glass-panel rounded-xl p-4 max-w-[180px] shadow-premium">
-                <div className="font-medium text-nova-blue mb-1">Interfaz intuitiva</div>
+                <div className="font-medium text-nova-orange mb-1">Interfaz intuitiva</div>
                 <div className="text-sm text-nova-darkGray/80">Acceso rápido a todas las funciones</div>
               </div>
               
               <div className="absolute -left-16 bottom-32 glass-panel rounded-xl p-4 max-w-[180px] shadow-premium">
-                <div className="font-medium text-nova-blue mb-1">Notificaciones</div>
+                <div className="font-medium text-nova-orange mb-1">Notificaciones</div>
                 <div className="text-sm text-nova-darkGray/80">Alertas en tiempo real</div>
               </div>
               
               {/* Decoration */}
-              <div className="absolute -z-10 inset-0 rounded-3xl bg-nova-blue/10 blur-xl"></div>
-              <div className="absolute -z-10 -top-5 -left-5 w-full h-full rounded-3xl border-2 border-nova-blue/20"></div>
-              <div className="absolute -z-10 -bottom-5 -right-5 w-full h-full rounded-3xl border-2 border-nova-blue/20"></div>
+              <div className="absolute -z-10 inset-0 rounded-3xl bg-nova-orange/10 blur-xl"></div>
+              <div className="absolute -z-10 -top-5 -left-5 w-full h-full rounded-3xl border-2 border-nova-orange/20"></div>
+              <div className="absolute -z-10 -bottom-5 -right-5 w-full h-full rounded-3xl border-2 border-nova-orange/20"></div>
             </div>
           </div>
         </div>

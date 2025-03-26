@@ -36,7 +36,7 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         <a href="#" className="flex items-center">
-          <span className="text-2xl font-bold text-nova-black">Nova<span className="text-nova-blue">GPS</span></span>
+          <span className="text-2xl font-bold text-nova-black">Nova<span className="text-nova-orange">GPS</span></span>
         </a>
 
         {/* Desktop Navigation */}
@@ -45,7 +45,7 @@ const Navbar = () => {
             <a 
               key={link.href} 
               href={link.href}
-              className="text-sm font-medium text-nova-darkGray hover:text-nova-blue transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-nova-blue after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100"
+              className="text-sm font-medium text-nova-darkGray hover:text-nova-orange transition-colors relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-nova-orange after:scale-x-0 after:origin-left after:transition-transform hover:after:scale-x-100"
             >
               {link.label}
             </a>
@@ -54,7 +54,7 @@ const Navbar = () => {
             href="https://novagps.mx/plataforma" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="button-highlight bg-nova-blue text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-nova-darkBlue transition-colors shadow-button"
+            className="button-highlight bg-nova-orange text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-nova-darkOrange transition-colors shadow-button"
           >
             Plataforma
           </a>
@@ -82,7 +82,7 @@ const Navbar = () => {
             <a 
               key={link.href} 
               href={link.href}
-              className="text-lg font-medium text-nova-darkGray hover:text-nova-blue transition-colors p-3 w-full text-center bg-nova-gray/50 rounded-md"
+              className="text-lg font-medium text-nova-darkGray hover:text-nova-orange transition-colors p-3 w-full text-center bg-nova-gray/50 rounded-md"
               onClick={() => setIsMenuOpen(false)}
             >
               {link.label}
@@ -92,7 +92,7 @@ const Navbar = () => {
             href="https://novagps.mx/plataforma" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="button-highlight bg-nova-blue text-white px-6 py-3 rounded-full text-lg font-medium w-full text-center shadow-button mt-4"
+            className="button-highlight bg-nova-orange text-white px-6 py-3 rounded-full text-lg font-medium w-full text-center shadow-button mt-4"
             onClick={() => setIsMenuOpen(false)}
           >
             Plataforma
